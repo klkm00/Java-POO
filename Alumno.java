@@ -2,24 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package cl.duocvina.sistemacalcularpromedio;
+package cl.duocvina.sistemacentromedico;
 
 /**
  *
- * @author klkm0
+ * @author User
  */
 public class Alumno {
     
     private String nombreAlumno;
     private String rutAlumno;
-    private int edad;
-    private String fechaNacimiento;
+    private boolean jornadaAlumno; // True: vespertino, False: diurno
+    private String institutoAlumno;
 
-    public Alumno(String nombreAlumno, String rutAlumno, int edad, String fechaNacimiento) {
+    public Alumno(String nombreAlumno, String rutAlumno, boolean jornadaAlumno, String institutoAlumno) {
         this.nombreAlumno = nombreAlumno;
         this.rutAlumno = rutAlumno;
-        this.edad = edad;
-        this.fechaNacimiento = fechaNacimiento;
+        this.jornadaAlumno = jornadaAlumno;
+        this.institutoAlumno = institutoAlumno;
     }
 
     public String getNombreAlumno() {
@@ -34,21 +34,26 @@ public class Alumno {
     public void setRutAlumno(String rutAlumno) {
         this.rutAlumno = rutAlumno;
     }
-    public int getEdad() {
-        return edad;
+    public boolean isJornadaAlumno() {
+        return jornadaAlumno;
     }
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setJornadaAlumno(boolean jornadaAlumno) {
+        this.jornadaAlumno = jornadaAlumno;
     }
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getInstitutoAlumno() {
+        return institutoAlumno;
     }
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setInstitutoAlumno(String institutoAlumno) {
+        this.institutoAlumno = institutoAlumno;
     }
-
     
-    
-    
-    
+    //Getter custom
+    //Convierte a String los valores del boolean (T/F)
+    public String getJourney() {
+        if (this.jornadaAlumno==true) {
+            return "Vespertino"; 
+        } else {
+            return "Diurno";
+        }
+    }
 }
